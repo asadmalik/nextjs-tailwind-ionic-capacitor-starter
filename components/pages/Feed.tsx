@@ -2,21 +2,21 @@ import Image from 'next/image';
 import Card from '../ui/Card';
 
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
   IonButton,
-  IonIcon,
+  IonButtons,
   IonContent,
+  IonHeader,
+  IonIcon,
   IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react';
-import Notifications from './Notifications';
-import { useState } from 'react';
 import { notificationsOutline } from 'ionicons/icons';
-import { selectHomeItems } from '../../store/selectors';
+import { useState } from 'react';
 import Store from '../../store';
+import { selectHomeItems } from '../../store/selectors';
+import Notifications from './Notifications';
 
 type FeedCardProps = {
   title: string;
@@ -37,6 +37,7 @@ const FeedCard = ({
 }: FeedCardProps) => (
   <Card className="my-4 mx-auto">
     <div className="h-32 w-full relative">
+      
       <Image
         className="rounded-t-xl object-cover min-w-full min-h-full max-w-full max-h-full"
         src={image}
@@ -46,7 +47,7 @@ const FeedCard = ({
     </div>
     <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-gray-900">
       <h4 className="font-bold py-0 text-s text-gray-400 dark:text-gray-500 uppercase">
-        {type}
+        {type} -- Type
       </h4>
       <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
         {title}
@@ -64,7 +65,7 @@ const FeedCard = ({
           />
         </div>
         <h3 className="text-gray-500 dark:text-gray-200 m-l-8 text-sm font-medium">
-          {author}
+          {author} -- Author
         </h3>
       </div>
     </div>
